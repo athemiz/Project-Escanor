@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class Player_Controller : MonoBehaviour {
 
@@ -14,8 +15,8 @@ public class Player_Controller : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		float hAxis = Input.GetAxis("Horizontal");
-		float vAxis = Input.GetAxis("Vertical");
+		float hAxis = CrossPlatformInputManager.GetAxis("Horizontal");
+		float vAxis = CrossPlatformInputManager.GetAxis("Vertical");
 		
 		Vector3 movement = new Vector3(hAxis, vAxis, 0) * speed * Time.deltaTime;
 		rig.MovePosition(transform.position + movement);
