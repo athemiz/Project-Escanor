@@ -242,6 +242,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -256,6 +257,18 @@ AudioListener:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
+--- !u!114 &519420030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c8dd76eea54054ea56886bab95d8eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 795653970}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -303,7 +316,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -319,6 +332,7 @@ GameObject:
   - component: {fileID: 592004314}
   - component: {fileID: 592004316}
   - component: {fileID: 592004315}
+  - component: {fileID: 592004317}
   m_Layer: 0
   m_Name: Tilemap_rock
   m_TagString: Untagged
@@ -944,6 +958,42 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!68 &592004317
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 592004313}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 5.6658707, y: 2.1700919}
+  - {x: 5.737919, y: -1.0901634}
+  - {x: 5.4562454, y: -1.5790367}
+  - {x: 4.6323576, y: -1.7428974}
+  - {x: 3.7484016, y: -1.5956476}
+  - {x: 3.621764, y: 1.1085033}
+  - {x: 3.6386623, y: 2.0700371}
+  - {x: 3.2476377, y: 2.0905313}
+  - {x: 2.4615245, y: 3.0246532}
+  - {x: 2.4916205, y: 5.041776}
+  - {x: 2.595241, y: 7.121146}
+  - {x: 3.65554, y: 8.100355}
+  - {x: 4.4720373, y: 8.48522}
+  - {x: 5.5116005, y: 8.60685}
+  - {x: 6.798379, y: 7.8740582}
+  - {x: 7.5475864, y: 6.7425504}
+  - {x: 7.5743647, y: 4.789116}
+  - {x: 7.433059, y: 3.5757537}
+  - {x: 7.1279345, y: 2.9908128}
+  - {x: 6.9405465, y: 2.2112932}
+  - {x: 5.6613426, y: 2.1654947}
 --- !u!1 &795653970
 GameObject:
   m_ObjectHideFlags: 0
@@ -955,6 +1005,7 @@ GameObject:
   - component: {fileID: 795653974}
   - component: {fileID: 795653973}
   - component: {fileID: 795653972}
+  - component: {fileID: 795653975}
   m_Layer: 0
   m_Name: TescarSprite_Set_0
   m_TagString: Untagged
@@ -969,7 +1020,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 795653970}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.175, y: 0.92, z: -0.100812234}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 4.696, y: 4.696, z: 4.696}
   m_Children: []
   m_Father: {fileID: 32041947}
@@ -986,6 +1037,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d574149b9668a1a4c9dde9ba6de10400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rig: {fileID: 795653973}
   speed: 10
 --- !u!50 &795653973
 Rigidbody2D:
@@ -1053,6 +1105,31 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &795653975
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 795653970}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.020172779, y: -0.09189822}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.23, y: 0.33}
+    newSize: {x: 0.23, y: 0.33}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.16275743, y: 0.1462036}
+  m_EdgeRadius: 0
 --- !u!1 &1299479126
 GameObject:
   m_ObjectHideFlags: 0

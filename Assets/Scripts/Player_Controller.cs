@@ -5,12 +5,12 @@ using UnityStandardAssets.CrossPlatformInput;
 
 public class Player_Controller : MonoBehaviour {
 
-	private Rigidbody2D rig;
+	public Rigidbody2D rig;
 	public float speed = 10;
 
 	// Use this for initialization
 	void Start () {
-		rig = GetComponent<Rigidbody2D>();
+		
 	}
 	
 	// Update is called once per frame
