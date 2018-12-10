@@ -19,6 +19,9 @@ public class Camera_Controller : MonoBehaviour {
     void Start () 
     {
         camera = this.GetComponent<Camera>();
+        camera_height = 2f * camera.orthographicSize;
+        camera_width = camera_height * camera.aspect;
+        
         wall_top = mapa.GetComponents<BoxCollider2D>()[0];
         wall_bottom = mapa.GetComponents<BoxCollider2D>()[1];
         wall_left = mapa.GetComponents<BoxCollider2D>()[2];
@@ -37,7 +40,10 @@ public class Camera_Controller : MonoBehaviour {
     void LateUpdate () 
     {
         // Set the position of the camera's transform to be the same as the player's, but offset by the calculated offset distance.
-        if(player.transform.position.x + camera.orthographicSize/2 < wall_right.offset.x)
+        if(player.transform.position.x + camera_width/2 < wall_right.offset.x || 
+           player.transform.position.x - camera_width/2 > wall_left.offset.x ||
+           player.transform.position.y + camera_height/2 < wall_top.offset.y ||
+           player.transform.position.y - camera_height/2 > wall_bottom.offset.y)
             transform.position = player.transform.position + offset;
     }
 }
