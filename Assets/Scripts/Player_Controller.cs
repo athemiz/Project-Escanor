@@ -10,9 +10,8 @@ public class Player_Controller : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		float hAxis = CrossPlatformInputManager.GetAxis("Horizontal");
@@ -20,6 +19,5 @@ public class Player_Controller : MonoBehaviour {
 		
 		Vector3 movement = new Vector3(hAxis, vAxis, 0) * speed * Time.deltaTime;
 		rig.MovePosition(transform.position + movement);
-			
 	}
 }
